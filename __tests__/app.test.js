@@ -20,3 +20,15 @@ describe('zodiacs routes', () => {
     expect(res.body).toEqual(aquarius);
   });
 });
+
+describe('horoscopes routes', () => {
+  it('/horoscopes/:name should return zodiac detail', async () => {
+    const res = await request(app).get('/horoscopes/aquarius');
+    const aquarius = {
+      id: '1',
+      name: 'aquarius',
+      scope: 'get it together',
+    };
+    expect(res.body).toEqual(aquarius);
+  });
+});
